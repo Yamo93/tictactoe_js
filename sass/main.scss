@@ -1,0 +1,96 @@
+$bg-color: #003A4E;
+$light-green: #029C83;
+$yellow-color: #DEBC04;
+$white: #FEFEFE;
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $bg-color;
+    text-align: center;
+    height: 100vh;
+}
+
+
+.state {
+    font-family: 'Lato';
+    text-align: center;
+    margin-top: 70px;
+    color: $white;
+}
+
+.btn {
+    display: inline-block;
+    width: 15%;
+    height: 50px;
+    padding: 15px 25px;
+    margin-top: 50px;
+    text-align: center;
+    background-color: $white;
+    border: 1px solid transparent;
+    color: $bg-color;
+    font-family: 'Lato';
+    text-decoration: none;
+    transition: all .4s;
+}
+
+.btn:hover {
+    border: 1px solid $white;
+    background-color: $light-green;
+    transform: scale(1.2);
+    color: $white;
+    box-shadow: 3px 6px 5px rgba(0, 0, 0, .2);
+}
+
+.wins {
+    color: $yellow-color;
+}
+
+.loses {
+    color: rgb(216, 5, 5);
+}
+
+.gameboard {
+    margin-top: 70px;
+    margin-bottom: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: teal;
+    width: 500px;
+    height: 60vh;
+    font-size: 100px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, .2);
+
+
+    &__row1,
+    &__row2,
+    &__row3 {
+        height: calc(100% / 3);
+        display: flex;
+
+        &-item {
+            height: 100%;
+            width: calc(100% / 3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        &-item:not(:last-child) {
+            border-right: 3px solid $white;
+        }
+    }
+
+    &__row2 {
+        border-top: 3px solid $white;
+        border-bottom: 3px solid $white;
+
+        
+    }
+}
+
